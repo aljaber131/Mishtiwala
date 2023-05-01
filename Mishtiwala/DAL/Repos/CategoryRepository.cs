@@ -7,15 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    public class CategoryRepository : IRepository<Category>
+    public class CategoryRepository : BaseRepo, IRepository<Category>
     {
-        private readonly ApplicationContext _dbContext;
-
-        public CategoryRepository(ApplicationContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
-
         public Category GetById(int id)
         {
             return _dbContext.Categories.Find(id);

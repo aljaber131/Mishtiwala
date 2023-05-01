@@ -7,15 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    public class OfferRepository : IRepository<Offer>
+    public class OfferRepository : BaseRepo, IRepository<Offer>
     {
-        private readonly ApplicationDbContext _dbContext;
-
-        public OfferRepository(ApplicationDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
-
         public Offer GetById(int id)
         {
             return _dbContext.Offers.Find(id);

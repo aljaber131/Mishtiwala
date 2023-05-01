@@ -7,14 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    public class UserRepository : IRepository<User>
+    public class UserRepository : BaseRepo,IRepository<User>
     {
-        private readonly ApplicationContext _dbContext;
-
-        public UserRepository(ApplicationContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
 
         public User GetById(int id)
         {

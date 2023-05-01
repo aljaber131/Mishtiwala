@@ -7,15 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    public class AreaRepository : IRepository<Area>
+    public class AreaRepository : BaseRepo, IRepository<Area>
     {
-        private readonly ApplicationContext _dbContext;
-
-        public AreaRepository(ApplicationContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
-
         public Area GetById(int id)
         {
             return _dbContext.Areas.Find(id);

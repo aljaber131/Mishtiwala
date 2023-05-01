@@ -7,14 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    public class DeliveryHistoryRepository : IRepository<DeliveryHistory>
+    public class DeliveryHistoryRepository : BaseRepo, IRepository<DeliveryHistory>
     {
-        private readonly ApplicationContext _dbContext;
-
-        public DeliveryHistoryRepository(ApplicationContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
 
         public DeliveryHistory GetById(int id)
         {
