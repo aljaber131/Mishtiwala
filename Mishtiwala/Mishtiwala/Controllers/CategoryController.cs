@@ -10,70 +10,63 @@ using System.Web.Http;
 
 namespace Mishtiwala.Controllers
 {
-    public class UserController : ApiController
+    public class CategoryController : ApiController
     {
-        private readonly UserService _userService;
+        private readonly CategoryServices _categoryService;
 
-        public UserController()
+        public CategoryController()
         {
-            _userService = new UserService();
+            _categoryService= new CategoryServices();
         }
 
         [HttpGet]
-        [Route("api/users")]
+        [Route("api/category")]
         public HttpResponseMessage Get()
         {
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
         [HttpGet]
-        [Route("api/users/{id}")]
+        [Route("api/category/{id}")]
         public HttpResponseMessage Get(int id)
         {
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
         [HttpPost]
-        [Route("api/users/add")]
-        public HttpResponseMessage Add(UserCreateModel user)
-        {
+        [Route("api/category/add")]
+        public HttpResponseMessage Add(CategoryCreateModel category) {
             if (ModelState.IsValid)
             {
-                UserDTO userDTO = new UserDTO
+                CategoryDTO categoryDTO = new CategoryDTO
                 {
-                    Address= user.Address,
-                    Email= user.Email,
-                    Phone= user.Phone,
-                    FirstName= user.FirstName,
-                    LastName= user.LastName,
-                    Role= user.Role,
-                    Password= user.Password,
+                    Name = category.Name,
                 };
                 try
                 {
-                    _userService.CreateUser(userDTO);
-                    return Request.CreateResponse(HttpStatusCode.OK, "User Created");
+                    _categoryService.CreateCategory(categoryDTO);
+                    return Request.CreateResponse(HttpStatusCode.OK, "Category Created");
                 }
                 catch (Exception ex)
                 {
                     return Request.CreateResponse(HttpStatusCode.InternalServerError, ex);
                 }
             }
-            return Request.CreateResponse(HttpStatusCode.BadRequest,ModelState);
+            return Request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
         }
-
         [HttpPatch]
-        [Route("api/users/update/{id}")]
-        public HttpResponseMessage Patch(UserDTO user,int id) 
+        [Route("api/category/update/{id}")]
+        public HttpResponseMessage Patch(CategoryDTO category, int id)
         {
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
         [HttpDelete]
-        [Route("api/users/delete/{id}")]
+        [Route("api/category/delete/{id}")]
         public HttpResponseMessage Delete(int id)
         {
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
 }
+
