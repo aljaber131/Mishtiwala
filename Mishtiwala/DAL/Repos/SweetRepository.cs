@@ -7,14 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    public class SweetRepository : IRepository<Sweet>
+    public class SweetRepository : BaseRepo, IRepository<Sweet>
     {
-        private readonly ApplicationContext _dbContext;
-
-        public SweetRepository(ApplicationContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
 
         public Sweet GetById(int id)
         {

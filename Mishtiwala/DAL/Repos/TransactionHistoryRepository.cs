@@ -7,14 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    public class TransactionHistoryRepository : IRepository<TransactionHistory>
+    public class TransactionHistoryRepository : BaseRepo, IRepository<TransactionHistory>
     {
-        private readonly ApplicationContext _dbContext;
-
-        public TransactionHistoryRepository(ApplicationContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
 
         public TransactionHistory GetById(int id)
         {

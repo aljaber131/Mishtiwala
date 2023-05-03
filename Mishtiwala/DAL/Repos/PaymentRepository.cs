@@ -7,14 +7,8 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    public class PaymentRepository : IRepository<Payment>
+    public class PaymentRepository : BaseRepo, IRepository<Payment>
     {
-        private readonly ApplicationDbContext _dbContext;
-
-        public PaymentRepository(ApplicationDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
 
         public Payment GetById(int id)
         {
