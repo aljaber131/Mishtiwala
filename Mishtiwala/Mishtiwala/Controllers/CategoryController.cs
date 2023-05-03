@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.UI.WebControls;
 
 namespace Mishtiwala.Controllers
 {
@@ -23,14 +24,16 @@ namespace Mishtiwala.Controllers
         [Route("api/category")]
         public HttpResponseMessage Get()
         {
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            var catList=_categoryService.GetAllCategories();
+            return Request.CreateResponse(HttpStatusCode.OK, catList);
         }
 
         [HttpGet]
         [Route("api/category/{id}")]
         public HttpResponseMessage Get(int id)
         {
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            var cat = _categoryService.GetCategoryById(id);
+            return Request.CreateResponse(HttpStatusCode.OK, cat);
         }
 
         [HttpPost]
@@ -58,6 +61,7 @@ namespace Mishtiwala.Controllers
         [Route("api/category/update/{id}")]
         public HttpResponseMessage Patch(CategoryDTO category, int id)
         {
+            _categoryService.UpdateCategory(category, id);
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
@@ -65,6 +69,7 @@ namespace Mishtiwala.Controllers
         [Route("api/category/delete/{id}")]
         public HttpResponseMessage Delete(int id)
         {
+            _categoryService.DeleteCategory(id);
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }

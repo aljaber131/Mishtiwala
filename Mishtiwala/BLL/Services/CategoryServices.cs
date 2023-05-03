@@ -25,5 +25,53 @@ namespace BLL.Services
                 Name = category.Name,
             });
         }
+
+        public CategoryDTO GetCategoryById(int id)
+        {
+            var categoryEntity=_categoryRepository.GetById(id);
+            if (categoryEntity == null)
+            {
+                return null;
+            }
+            CategoryDTO category = new CategoryDTO
+            {
+                Name = categoryEntity.Name,
+                Id= categoryEntity.Id
+            };
+            return category;
+        }
+
+        public List<CategoryDTO> GetAllCategories()
+        {
+            var list = _categoryRepository.GetAll();
+            var categories = new List<CategoryDTO>();
+            foreach (var category in list)
+            {
+                categories.Add(new CategoryDTO
+                {
+                    Name = category.Name,
+                    Id = category.Id
+                });
+            }
+            return categories;
+        }
+
+        public void UpdateCategory(CategoryDTO category,int id)
+        {
+            var entity = _categoryRepository.GetById(id);
+            if (entity == null)
+            {
+                return;
+            }
+            entity.Name = category.Name;
+            entity.Id = category.Id;
+            _categoryRepository.Update(entity);
+        }
+
+        public void DeleteCategory(int id)
+        {
+            var entity = _categoryRepository.GetById(id);
+            _categoryRepository.Delete(entity);
+        }
     }
 }
