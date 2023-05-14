@@ -1,4 +1,5 @@
-﻿using DAL.Models;
+﻿using DAL.Interfaces;
+using DAL.Models;
 using DAL.Repos;
 using System;
 using System.Collections.Generic;
@@ -25,5 +26,11 @@ namespace DAL
         public static IRepository<Sweet> SweetData() { return new SweetRepository();}   
 
         public static IRepository<TransactionHistory> TransactionHistoryData() { return new TransactionHistoryRepository();}
+
+        public static IRepository<Token> TokenData() { return new TokenRepository();}
+
+        public static IAuth AuthData () { return new UserRepository();}
+
+        public static IToken ITokenData() { return new TokenRepository();}
     }
 }

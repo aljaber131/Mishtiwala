@@ -23,14 +23,14 @@ namespace Mishtiwala.Controllers
         [Route("api/users")]
         public HttpResponseMessage Get()
         {
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            return Request.CreateResponse(HttpStatusCode.OK, new { data = _userService.GetAllUsers() });
         }
 
         [HttpGet]
         [Route("api/users/{id}")]
         public HttpResponseMessage Get(int id)
         {
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            return Request.CreateResponse(HttpStatusCode.OK,new {data=_userService.GetUserById(id)});
         }
 
         [HttpPost]

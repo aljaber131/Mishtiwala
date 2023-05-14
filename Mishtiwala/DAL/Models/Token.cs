@@ -8,20 +8,22 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class Payment
+    public class Token
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required] public double Amount { get; set; }
-        public int SweetId { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string TokenKey { get; set; }
 
-        [ForeignKey(nameof(SweetId))]
-        public Sweet Sweet { get; set; }
-        public int UserId { get; set; }
-
-        [ForeignKey(nameof(UserId))]
-        public User User { get; set; }
+        [Required]
+        public string Role { get; set; }
+        
+        [Required]
+        [ForeignKey("User")]
+        public int UserId { get; set;}
+        public User User { get; set;}
     }
 }
