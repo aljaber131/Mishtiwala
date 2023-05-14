@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="ApplicationContext.cs" />
     <Compile Include="DataAccessFactory.cs" />
+    <Compile Include="Interfaces\IAuth.cs" />
+    <Compile Include="Interfaces\IToken.cs" />
     <Compile Include="Migrations\202304302034527_User.cs" />
     <Compile Include="Migrations\202304302034527_User.designer.cs">
       <DependentUpon>202304302034527_User.cs</DependentUpon>
@@ -65,13 +67,19 @@
     <Compile Include="Migrations\202305091818581_ChangeOnEntity.designer.cs">
       <DependentUpon>202305091818581_ChangeOnEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305132239594_TokenDB.cs" />
+    <Compile Include="Migrations\202305132239594_TokenDB.designer.cs">
+      <DependentUpon>202305132239594_TokenDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Area.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\DeliveryHistory.cs" />
     <Compile Include="Models\Offer.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\Sweet.cs" />
+    <Compile Include="Models\Token.cs" />
     <Compile Include="Models\TransactionHistory.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +91,7 @@
     <Compile Include="Repos\OfferRepository.cs" />
     <Compile Include="Repos\PaymentRepository.cs" />
     <Compile Include="Repos\SweetRepository.cs" />
+    <Compile Include="Repos\TokenRepository.cs" />
     <Compile Include="Repos\TransactionHistoryRepository.cs" />
     <Compile Include="Repos\UserRepository.cs" />
   </ItemGroup>
@@ -99,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202305091818581_ChangeOnEntity.resx">
       <DependentUpon>202305091818581_ChangeOnEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305132239594_TokenDB.resx">
+      <DependentUpon>202305132239594_TokenDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

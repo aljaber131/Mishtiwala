@@ -18,5 +18,6 @@ namespace DAL
         public DbSet<Payment> Payments { get; set; }
         public DbSet<TransactionHistory> TransactionHistories { get; set; }
         public DbSet<Sweet> Sweets { get; set; }
+        public DbSet<Token> Tokens { get; set; }
     }
 }

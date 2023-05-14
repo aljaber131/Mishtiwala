@@ -56,9 +56,11 @@
     <Compile Include="DTOs\OfferDTO.cs" />
     <Compile Include="DTOs\PaymentDTO.cs" />
     <Compile Include="DTOs\SweetDTO.cs" />
+    <Compile Include="DTOs\TokenDTO.cs" />
     <Compile Include="DTOs\UserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AreaService.cs" />
+    <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\CategoryServices.cs" />
     <Compile Include="Services\OfferService.cs" />
     <Compile Include="Services\PaymentService.cs" />

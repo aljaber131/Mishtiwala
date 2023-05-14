@@ -1,4 +1,5 @@
-﻿using DAL.Models;
+﻿using DAL.Interfaces;
+using DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    public class UserRepository : BaseRepo,IRepository<User>
+    public class UserRepository : BaseRepo,IRepository<User>, IAuth
     {
 
         public User GetById(int id)
@@ -40,6 +41,11 @@ namespace DAL.Repos
         {
             _dbContext.Users.Remove(entity);
             _dbContext.SaveChanges();
+        }
+
+        public User Login(string username, string password)
+        {
+            return _dbContext.Users.Find(username,password);
         }
     }
 }
