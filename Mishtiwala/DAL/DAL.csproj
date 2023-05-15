@@ -77,6 +77,7 @@
     <Compile Include="Models\DeliveryHistory.cs" />
     <Compile Include="Models\Offer.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\Sweet.cs" />
     <Compile Include="Models\Token.cs" />
@@ -89,6 +90,8 @@
     <Compile Include="Repos\DeliveryHistoryRepository.cs" />
     <Compile Include="Repos\IRepository.cs" />
     <Compile Include="Repos\OfferRepository.cs" />
+    <Compile Include="Repos\OrderItemRepository.cs" />
+    <Compile Include="Repos\OrderRepository.cs" />
     <Compile Include="Repos\PaymentRepository.cs" />
     <Compile Include="Repos\SweetRepository.cs" />
     <Compile Include="Repos\TokenRepository.cs" />

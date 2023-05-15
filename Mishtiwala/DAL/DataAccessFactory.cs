@@ -32,5 +32,6 @@ namespace DAL
         public static IAuth AuthData () { return new UserRepository();}
 
         public static IToken ITokenData() { return new TokenRepository();}
+        public static IRepository<Order> OrderData() { return new OrderRepository();}
     }
 }

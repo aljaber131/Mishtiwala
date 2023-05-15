@@ -8,23 +8,25 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-    public class Order
+    public class OrderItem
     {
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
-        public int UserId { get; set; }
+        public int OrderId { get; set; }
 
-        [ForeignKey(nameof(UserId))]
-        public User User { get; set; }
-
-        [Required]
-        public DateTime OrderDate { get; set; }
+        [ForeignKey(nameof(OrderId))]
+        public Order Order { get; set; }
 
         [Required]
-        public ICollection<OrderItem> OrderItems { get; set; }
+        public int SweetId { get; set; }
+
+        [ForeignKey(nameof(SweetId))]
+        public Sweet Sweet { get; set; }
+
+        [Required]
+        public int Quantity { get; set; }
     }
 }

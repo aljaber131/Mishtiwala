@@ -96,6 +96,7 @@
     <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\OfferController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\SweetController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
@@ -107,9 +108,14 @@
     <Compile Include="Models\CategoryCreateModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\OfferCreateModel.cs" />
+    <Compile Include="Models\OrderCreateModel.cs" />
+    <Compile Include="Models\OrderItemModel.cs" />
+    <Compile Include="Models\OrderUpdateModel.cs" />
     <Compile Include="Models\PaymentCreateModel.cs" />
     <Compile Include="Models\SweetCreateModel.cs" />
+    <Compile Include="Models\SweetModel.cs" />
     <Compile Include="Models\UserCreateModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

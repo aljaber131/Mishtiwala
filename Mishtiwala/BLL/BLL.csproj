@@ -54,6 +54,8 @@
     <Compile Include="DTOs\AreaDTO.cs" />
     <Compile Include="DTOs\CategoryDTO.cs" />
     <Compile Include="DTOs\OfferDTO.cs" />
+    <Compile Include="DTOs\OrderDTO.cs" />
+    <Compile Include="DTOs\OrderItemDTO.cs" />
     <Compile Include="DTOs\PaymentDTO.cs" />
     <Compile Include="DTOs\SweetDTO.cs" />
     <Compile Include="DTOs\TokenDTO.cs" />
@@ -63,6 +65,8 @@
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\CategoryServices.cs" />
     <Compile Include="Services\OfferService.cs" />
+    <Compile Include="Services\OrderItemService.cs" />
+    <Compile Include="Services\OrderService.cs" />
     <Compile Include="Services\PaymentService.cs" />
     <Compile Include="Services\SweetService.cs" />
     <Compile Include="Services\UserService.cs" />
